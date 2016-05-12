@@ -48,17 +48,17 @@ public class DriveForTime {
 		switch (state) {
 			
 			case 0 :
-				if(zeroHeading > 5) {
-					mtrFrontRight = -(speed + (((getCurrentSetPoint - zeroHeading) * Math.pow(10, -1)) * .3) );
-					mtrBackRight = -(speed + (((getCurrentSetPoint - zeroHeading) * Math.pow(10, -1)) * .3) );
+				if(zeroHeading < -5) {
+					mtrFrontRight = -(speed - ((-zeroHeading * Math.pow(10, -1)) * .3) );
+					mtrBackRight = -(speed - ((-zeroHeading * Math.pow(10, -1)) * .3) );
 				} else {
 					mtrFrontRight = -speed;
 					mtrBackRight = -speed;
 				}
 				
-				if(zeroHeading < -5) {
-					mtrFrontLeft = speed + (((getCurrentSetPoint - zeroHeading) * Math.pow(10, -1)) * .3);
-					mtrBackLeft = speed + (((getCurrentSetPoint - zeroHeading) * Math.pow(10, -1)) * .3);
+				if(zeroHeading > 5) {
+					mtrFrontLeft = speed - ((zeroHeading * Math.pow(10, -1)) * .3);
+					mtrBackLeft = speed - ((zeroHeading * Math.pow(10, -1)) * .3);
 				} else {
 					mtrFrontLeft = speed;
 					mtrBackLeft = speed;
@@ -69,17 +69,17 @@ public class DriveForTime {
 			
 				
 			case 1 :
-				if(zeroHeading < -5) {
-						mtrBackRight = -(speed + (((getCurrentSetPoint - zeroHeading) * Math.pow(10, -1)) * .3) );
-						mtrBackLeft = speed + (((getCurrentSetPoint - zeroHeading) * Math.pow(10, -1)) * .3);
+				if(zeroHeading  > 5) {
+						mtrBackRight = -(speed - ((zeroHeading * Math.pow(10, -1)) * .3) );
+						mtrBackLeft = speed - ((zeroHeading * Math.pow(10, -1)) * .3);
 					} else {
 						mtrBackRight = -speed;
 						mtrBackLeft = speed;
 					}
 					
-					if(zeroHeading > 5) {
-						mtrFrontRight = -(speed + (((getCurrentSetPoint - zeroHeading) * Math.pow(10, -1)) * .3) );
-						mtrFrontLeft = speed + (((getCurrentSetPoint - zeroHeading) * Math.pow(10, -1)) * .3);
+					if(zeroHeading < -5) {
+						mtrFrontRight = -(speed - ((-zeroHeading * Math.pow(10, -1)) * .3) );
+						mtrFrontLeft = speed - ((-zeroHeading * Math.pow(10, -1)) * .3);
 					} else {
 						mtrFrontRight = -speed;
 						mtrFrontLeft = speed;
@@ -90,17 +90,17 @@ public class DriveForTime {
 				
 			
 			case 2 : 
-				if(zeroHeading > 5) {
-					mtrBackRight = -(speed - (((getCurrentSetPoint + zeroHeading) * Math.pow(10, -1)) * .3) );
-					mtrBackLeft = speed - (((getCurrentSetPoint + zeroHeading) * Math.pow(10, -1)) * .3);
+				if(zeroHeading < -5) {
+					mtrBackRight = -(speed - ((-zeroHeading * Math.pow(10, -1)) * .3) );
+					mtrBackLeft = speed - ((-zeroHeading * Math.pow(10, -1)) * .3);
 				} else {
 					mtrBackRight = -speed;
 					mtrBackLeft = speed;
 				}
 				
-				if(zeroHeading < -5) {
-					mtrFrontRight = -(speed + (((getCurrentSetPoint - zeroHeading) * Math.pow(10, -1)) * .3) );
-					mtrFrontLeft = speed + (((getCurrentSetPoint - zeroHeading) * Math.pow(10, -1)) * .3);
+				if(zeroHeading > 5) {
+					mtrFrontRight = -(speed - ((zeroHeading * Math.pow(10, -1)) * .3) );
+					mtrFrontLeft = speed - ((zeroHeading * Math.pow(10, -1)) * .3);
 				} else {
 					mtrFrontRight = -speed;
 					mtrFrontLeft = speed;
